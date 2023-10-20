@@ -1,6 +1,7 @@
 const express = require("express");
 const bcryptjs = require('bcryptjs');
 const bcrypt = require('bcrypt');
+var cors = require('cors')
 var jwt = require('jsonwebtoken');
 require("dotenv").config();
 
@@ -11,6 +12,7 @@ const {blogModel} = require("./models/blogs.model");
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
